@@ -1,0 +1,9 @@
+Package: liblua5.1-captcha0
+Version: 0.2
+Section: utils
+Priority: optional
+Architecture: i386
+Depends: lua5.1, liblua5.1-gd
+Maintainer: startx . <startx@plentyfact.org>
+Description: generate captcha images in lua
+ lua library to generate captcha

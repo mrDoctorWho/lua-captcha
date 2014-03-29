@@ -1,4 +1,5 @@
 lua-captcha
-===========
+======
+Based on [lua-captcha](http://projects.plentyfact.org/projects/lua-captcha/wiki) project with a little fixes.
 
-lua-captcha is a small lua module to generate captchas using lua-gd
+**Copyright © 2011 startx <startx@plentyfact.org>**
