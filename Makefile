@@ -1,10 +1,9 @@
 #
 # Makefile
 #
-# this makefile is currently only used to make snapshots
 
 
-VERSION=0.2
+VERSION=0.2.1
 PACKAGE_VERSION=1
 PROG=dpkg-deb
 SOURCE=./tmp
@@ -12,8 +11,18 @@ FLAGS=--build
 DEBTARGET=liblua5.1-captcha0_$(VERSION)-$(PACKAGE_VERSION)_i386.deb
 TARGET=lua-captcha-$(VERSION)
 
+
+LUABIN=lua5.1
+OUTFILE=captcha.lua
+
+INSTALL_PATH := `$(LUABIN) -e 'for dir in package.cpath:gmatch("(/[^?;]+)?") do io.write(dir); os.exit(0) end; os.exit(1)'`
+
+
 default:
-	@echo "options are 'snapshot', 'clean'"
+	@echo "options are 'install', 'snapshot', 'clean'"
+
+install:
+	install -D src/$(OUTFILE) $(INSTALL_PATH)/$(OUTFILE)
 
 snapshot:
 	mkdir -p ./tmp
