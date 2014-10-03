@@ -94,7 +94,7 @@ function mt.__index:font(font)
 end
 
 
-function mt.__index:write(outfile)
+function mt.__index:write(outfile, quality)
 local captcha_t = {}
 
 if not self.cap.string then
@@ -153,7 +153,7 @@ local offset_left = 10
         end
     end
 
-im:png(outfile)
+im:jpeg(outfile, quality)
 
 return table.concat(captcha_t)
 end
