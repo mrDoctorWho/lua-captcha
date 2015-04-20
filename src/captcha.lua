@@ -22,7 +22,7 @@ local seed = 1
 	devurandom: close()
 
 	for i=1,string.len(urandom) do
-		s = string.byte(urandom,i)
+		local s = string.byte(urandom,i)
 		seed = seed + s
 	end
 	return seed
@@ -37,7 +37,7 @@ local function random_char(length)
 	math.randomseed(urandom())
 	
 	for c=1,length do
-		 i = math.random(1,string.len(set)) -- #?
+		 local i = math.random(1,string.len(set)) -- #?
 		 table.insert(captcha_t, string.sub(set,i,i))
 	end
 
