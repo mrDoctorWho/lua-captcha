@@ -155,7 +155,7 @@ end
 -- Perhaps it's not the best solution
 -- Writes the generated image to a jpeg file
 function mt.__index:jpeg(outfile, quality)
-	self.im:jpeg(outfile, quality)
+	self.im:jpeg(outfile, 80) -- fix for prosody
 end
 
 -- Writes the generated image to a png file
